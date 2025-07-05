@@ -36,7 +36,7 @@ export default function Navbar() {
           ))}
         </nav>
         <Button className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700">
-          Get Started
+          Contact Us
         </Button>
       </div>
     </header>

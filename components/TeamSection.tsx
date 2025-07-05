@@ -10,8 +10,8 @@ const teamMembers = [
     name: "Luvolwethu Tokwe",
     position: "Lead Developer & Co-Founder",
     image: "/placeholder.svg?height=200&width=200",
-    email: "alex@psybernerds.com",
-    linkedin: "linkedin.com/in/alexjohnson",
+    email: "luvolwethu.tokwe@nerdpyramidhub.com",
+    linkedin: "linkedin.com/in/sakhe-morosi-790854214/",
     experience: "Former Software Engineer at Google, 5+ years in full-stack development",
     specialties: ["React", "Node.js", "Cloud Architecture"],
   },
@@ -19,8 +19,8 @@ const teamMembers = [
     name: "Sakhe Morosi",
     position: "UI/UX Designer & Frontend Lead",
     image: "/placeholder.svg?height=200&width=200",
-    email: "sarah@psybernerds.com",
-    linkedin: "linkedin.com/in/sarahchen",
+    email: "morosisakhe@gmail.com",
+    linkedin: "linkedin.com/in/sakhe-morosi-790854214/",
     experience: "Ex-Design Lead at Spotify, 4+ years in product design",
     specialties: ["UI/UX Design", "React", "Design Systems"],
   },
@@ -28,8 +28,8 @@ const teamMembers = [
     name: "Abulele Maqungo",
     position: "Backend Architect & DevOps",
     image: "/placeholder.svg?height=200&width=200",
-    email: "marcus@psybernerds.com",
-    linkedin: "linkedin.com/in/marcusrodriguez",
+    email: "abulele.maqungo@nerdpyramidhub.com",
+    linkedin: "linkedin.com/in/sakhe-morosi-790854214/",
     experience: "Former Backend Engineer at Netflix, 6+ years in scalable systems",
     specialties: ["Python", "AWS", "Microservices"],
   },
@@ -37,8 +37,8 @@ const teamMembers = [
     name: "Clinton Mgoduswa",
     position: "Mobile Development Lead",
     image: "/placeholder.svg?height=200&width=200",
-    email: "emily@psybernerds.com",
-    linkedin: "linkedin.com/in/emilywatson",
+    email: "clinton.mgoduswa@nerdpyramidhub.com",
+    linkedin: "linkedin.com/in/sakhe-morosi-790854214/",
     experience: "Ex-Mobile Developer at Uber, 4+ years in cross-platform development",
     specialties: ["React Native", "Flutter", "iOS/Android"],
   },
@@ -46,8 +46,8 @@ const teamMembers = [
     name: "Lusanda Gutswana",
     position: "Data Engineer & AI Specialist",
     image: "/placeholder.svg?height=200&width=200",
-    email: "david@psybernerds.com",
-    linkedin: "linkedin.com/in/davidkim",
+    email: "lusanda.gutswana@nerdpyramidhub.com",
+    linkedin: "linkedin.com/in/sakhe-morosi-790854214/",
     experience: "Former ML Engineer at Tesla, 5+ years in data science",
     specialties: ["Python", "Machine Learning", "Data Analytics"],
   },
@@ -56,7 +56,7 @@ const teamMembers = [
     position: "Data Engineer & AI Specialist",
     image: "/placeholder.svg?height=200&width=200",
     email: "david@psybernerds.com",
-    linkedin: "linkedin.com/in/davidkim",
+    linkedin: "linkedin.com/in/sakhe-morosi-790854214/",
     experience: "Former ML Engineer at Tesla, 5+ years in data science",
     specialties: ["Python", "Machine Learning", "Data Analytics"],
   },
@@ -73,7 +73,7 @@ export default function TeamSection() {
               Meet the Team
             </Badge>
             <h2 className="text-2xl font-bold tracking-tighter sm:text-5xl">
-              The Minds Behind PsyberNerds
+              The Minds Behind NerdPyramid Hub
             </h2>
             <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Nine passionate professionals who started as classmates and now lead the future of digital innovation and education.
