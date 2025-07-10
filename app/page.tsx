@@ -14,10 +14,10 @@ export default function HomePage() {
       <Navbar />
       <main className="flex-1">
         <HeroSection />
-        <AboutSection />
-        <TeamSection />
         <ServicesSection />
         <ValuesSection />
+        <AboutSection />
+        <TeamSection />
         <MissionSection />
         <ContactSection />
       </main>

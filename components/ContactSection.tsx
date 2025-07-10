@@ -15,19 +15,23 @@ export default function ContactSection() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-2 min-[400px]:flex-row">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-              Start Your Project
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
-            >
-              Learn With Us
-            </Button>
-          </div>
+        <div className="flex flex-col min-[400px]:flex-row items-center gap-4">
+  <Button
+    size="lg"
+    variant="secondary"
+    className="bg-white text-blue-600 font-bold shadow-md hover:bg-blue-50 hover:text-emerald-600 transition-colors"
+  >
+    Start Your Project
+  </Button>
+  <span className="mx-2 text-lg font-semibold text-emerald-200 min-[400px]:text-center">OR</span>
+  <Button
+    size="lg"
+    variant="outline"
+    className="border-emerald-200 text-white font-bold shadow-md hover:bg-emerald-100 hover:text-blue-700 transition-colors bg-transparent"
+  >
+    Learn With Us
+  </Button>
+</div>
 
           <div className="flex items-center space-x-6 mt-8">
             <div className="flex items-center space-x-2">
