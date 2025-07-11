@@ -6,7 +6,6 @@ import ServicesSection from "@/components/ServicesSection";
 import ValuesSection from "@/components/ValuesSection";
 import MissionSection from "@/components/MissionSection";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -21,7 +20,6 @@ export default function HomePage() {
         <MissionSection />
         <ContactSection />
       </main>
-      <Footer />
     </div>
   );
 }
