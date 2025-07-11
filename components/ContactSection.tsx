@@ -1,6 +1,7 @@
 // components/ContactSection.tsx
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Github, Mail } from "lucide-react"
+import Link from "next/link"
 
 export default function ContactSection() {
   return (
@@ -16,6 +17,8 @@ export default function ContactSection() {
           </div>
 
         <div className="flex flex-col min-[400px]:flex-row items-center gap-4">
+
+  <Link href="/ContactUs">
   <Button
     size="lg"
     variant="secondary"
@@ -23,7 +26,9 @@ export default function ContactSection() {
   >
     Start Your Project
   </Button>
+  </Link>
   <span className="mx-2 text-lg font-semibold text-emerald-200 min-[400px]:text-center">OR</span>
+  <Link href="/LearnMore">
   <Button
     size="lg"
     variant="outline"
@@ -31,12 +36,13 @@ export default function ContactSection() {
   >
     Learn With Us
   </Button>
+  </Link>
 </div>
 
           <div className="flex items-center space-x-6 mt-8">
             <div className="flex items-center space-x-2">
               <Mail className="h-5 w-5" />
-              <span>hello@nerdpyramidhub.com</span>
+              <span>morosisakhe@gmail.com</span>
             </div>
             <div className="flex items-center space-x-2">
               <Github className="h-5 w-5" />

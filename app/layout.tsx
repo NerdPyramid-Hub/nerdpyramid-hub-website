@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Analytics } from "@vercel/analytics/next"
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'NerdPyramid Hub',
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         {children}
         <Analytics/>
+        <Footer/>
       </body>
     </html>
   )
