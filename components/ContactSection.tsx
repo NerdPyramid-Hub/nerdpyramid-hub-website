@@ -1,47 +1,63 @@
 // components/ContactSection.tsx
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github, Mail } from "lucide-react"
+import { ArrowRight, Mail } from "lucide-react"
+import Link from "next/link"
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-600 to-emerald-600">
+    <section
+      id="contact"
+      className="w-full py-16 md:py-24 lg:py-32 bg-[#27548A] text-[#F3F3E0]"
+    >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center text-white">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-5xl">Ready to Build Your Digital Future?</h2>
-            <p className="max-w-[600px] text-blue-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center">
+          {/* Heading */}
+          <div className="space-y-4">
+            <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl text-[#F3F3E0]">
+              Ready to Build Your Digital Future?
+            </h2>
+            <p className="max-w-[600px] mx-auto text-[#F3F3E0]/80 text-lg md:text-xl leading-relaxed">
               Join us in creating meaningful digital solutions while learning and growing together. Let's turn your
               ideas into reality.
             </p>
           </div>
 
-        <div className="flex flex-col min-[400px]:flex-row items-center gap-4">
-  <Button
-    size="lg"
-    variant="secondary"
-    className="bg-white text-blue-600 font-bold shadow-md hover:bg-blue-50 hover:text-emerald-600 transition-colors"
-  >
-    Start Your Project
-  </Button>
-  <span className="mx-2 text-lg font-semibold text-emerald-200 min-[400px]:text-center">OR</span>
-  <Button
-    size="lg"
-    variant="outline"
-    className="border-emerald-200 text-white font-bold shadow-md hover:bg-emerald-100 hover:text-blue-700 transition-colors bg-transparent"
-  >
-    Learn With Us
-  </Button>
-</div>
+          {/* Buttons */}
+          <div className="flex flex-col min-[400px]:flex-row items-center gap-4">
+            <Link href="/contact-us">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-[#DDA853] text-[#183B4E] font-bold shadow-md hover:bg-[#f2c15e] hover:text-[#183B4E]"
+              >
+                Start Your Project
+              </Button>
+            </Link>
 
-          <div className="flex items-center space-x-6 mt-8">
-            <div className="flex items-center space-x-2">
-              <Mail className="h-5 w-5" />
-              <span>hello@nerdpyramidhub.com</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Github className="h-5 w-5" />
-              <span>@NerdPyramid Hub</span>
-            </div>
+            <span className="mx-2 text-lg font-semibold text-[#F3F3E0] min-[400px]:text-center">
+              OR
+            </span>
+
+            <Link href="/learn-with-us">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#F3F3E0] text-[#27548A] font-bold shadow-md hover:bg-[#fcfcf4] hover:text-[#27548A]"
+              >
+                Learn With Us
+              </Button>
+            </Link>
+          </div>
+
+          {/* Email */}
+          <div className="flex items-center space-x-3 mt-8">
+            <Mail className="h-5 w-5 text-[#F3F3E0]" />
+            <Link
+              href="mailto:morossakhe@gmail.com"
+              className="text-[#F3F3E0] hover:underline text-base"
+            >
+              morosisakhe@gmail.com
+            </Link>
           </div>
         </div>
       </div>
