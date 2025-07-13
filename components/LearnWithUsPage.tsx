@@ -81,7 +81,7 @@ const learningPrograms = [
     duration: "Flexible",
     level: "All Levels",
     technologies: ["Java", "HTML/CSS/JS", "SQL", "Debugging", "Code Review"],
-    price: "R150/hour",
+    price: "R150 per Assignment",
     highlights: [
       "One-on-one tutoring sessions",
       "Code review and debugging",
