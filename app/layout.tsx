@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'NerdPyramid Hub',
-  description: 'Created bt NerdPyramid Hub',
+  description: 'Created by NerdPyramid Hub',
   generator: 'NerdPyramid Hub',
 }
 

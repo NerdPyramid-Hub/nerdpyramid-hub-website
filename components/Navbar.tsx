@@ -10,9 +10,9 @@ export default function Navbar() {
   const [selected, setSelected] = useState("#about")
 
   const links = [
+    { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
     { href: "#values", label: "Values" },
-    { href: "#about", label: "About" },
     { href: "#team", label: "Team" },
     { href: "#mission", label: "Mission" },
   ]
