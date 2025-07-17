@@ -53,10 +53,10 @@ export default function ContactSection() {
           <div className="flex items-center space-x-3 mt-8">
             <Mail className="h-5 w-5 text-[#F3F3E0]" />
             <Link
-              href="mailto:morossakhe@gmail.com"
+              href="mailto:info@nerdpyramidhub.com"
               className="text-[#F3F3E0] hover:underline text-base"
             >
-              morosisakhe@gmail.com
+              info@nerdpyramidhub.com
             </Link>
           </div>
         </div>

@@ -91,7 +91,7 @@ export default function ContactUsPage() {
         <div className="mt-12 w-full flex flex-col items-center gap-6">
           <div className="flex items-center gap-2 text-[#27548A] text-lg">
             <Mail className="h-5 w-5 text-[#27548A]" />
-            <span>morosisakhe@gmail.com</span>
+            <span>info@nerdpyramidhub.com</span>
           </div>
           <div className="flex items-center gap-2 text-[#27548A] text-lg">
             <Phone className="h-5 w-5 text-[#DDA853]" />
