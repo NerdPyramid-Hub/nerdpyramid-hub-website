@@ -109,7 +109,7 @@ export default function LearnWithUsPage() {
   };
 
   return (
-    <section className="min-h-screen bg-[#F3F3E0] py-16 px-4">
+    <section className="min-h-screen bg-[#f3f2e6] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 mt-16 relative">
@@ -256,7 +256,7 @@ export default function LearnWithUsPage() {
                   We’re currently preparing exciting new sessions. Enrollments
                   will reopen on{" "}
                   <span className="font-semibold text-[#DDA853]">
-                    01 August 2025
+                    15 August 2025
                   </span>
                   .
                 </p>

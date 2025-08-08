@@ -170,7 +170,7 @@ export default function CCTVServicesPage() {
   };
 
   return (
-    <section className="min-h-screen py-16 px-4 bg-[#F3F3E0]">
+    <section className="min-h-screen py-16 px-4 bg-[#f3f2e6]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 mt-16 relative">

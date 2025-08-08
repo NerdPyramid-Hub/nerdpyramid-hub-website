@@ -14,11 +14,9 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/", label: "Home" },
     { href: "/software-solutions", label: "Software Solutions" },
     { href: "/cctv-installation", label: "CCTV Installation" },
     { href: "/learn-with-us", label: "Learn with Us" },
-    { href: "/about", label: "About" },
   ];
 
   useEffect(() => {
@@ -54,17 +52,27 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex h-16 items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white">
+        <Link
+          href="/"
+          className="flex items-center space-x-2"
+          aria-label="Home"
+        >
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white shadow-sm">
             <Code className="h-5 w-5 text-[#27548A]" />
           </div>
-          <span className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-            NerdPyramid Hub
+          <span
+            className="text-xl md:text-2xl font-black tracking-tight text-[#5997e2] drop-shadow-sm"
+            style={{
+              letterSpacing: "0.01em",
+              lineHeight: "1.1",
+            }}
+          >
+            NerdPyramid <span className="text-[#DDA853]">Hub</span>
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 text-md font-medium">
+        <nav className="hidden md:flex items-center space-x-8 text-md font-medium">
           {links.map((link) => (
             <Link
               key={link.href}
