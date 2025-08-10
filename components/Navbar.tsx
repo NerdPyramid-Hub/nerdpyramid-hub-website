@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Code, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,11 +58,11 @@ export default function Navbar() {
           className="flex items-center space-x-2"
           aria-label="Home"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white shadow-sm">
-            <Code className="h-5 w-5 text-[#27548A]" />
+          <div className="flex  items-center justify-center">
+            <Image src="/nerdpyramid_logo_bg_removed.png.png" alt="Logo" width={60} height={60} />
           </div>
           <span
-            className="text-xl md:text-2xl font-black tracking-tight text-[#5997e2] drop-shadow-sm"
+            className="text-lg md:text-2xl font-black tracking-tight text-[#5997e2] drop-shadow-sm"
             style={{
               letterSpacing: "0.01em",
               lineHeight: "1.1",
@@ -90,7 +91,7 @@ export default function Navbar() {
 
         {/* Desktop Contact Button */}
         <div className="hidden md:block">
-          <Link href="/contact" passHref>
+          <Link href="/contact-us" passHref>
             <Button className="bg-[#DDA853] text-[#183B4E] font-bold shadow-md hover:bg-[#f2c15e] hover:text-[#183B4E]">
               Contact Us
             </Button>
@@ -129,7 +130,7 @@ export default function Navbar() {
             ))}
             <div className="pt-3 border-t border-[#DDA853]/20">
               <Link
-                href="/contact"
+                href="/contact-us"
                 passHref
                 onClick={() => setIsMenuOpen(false)}
               >

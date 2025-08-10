@@ -115,9 +115,9 @@ export default function LearnWithUsPage() {
         <div className="text-center mb-16 mt-16 relative">
           {/* Background Image with Overlay */}
           <div
-            className="absolute inset-0 rounded-3xl opacity-10 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 rounded-3xl opacity-50 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/placeholder.jpg')`,
+              backgroundImage: `url('/education coding.jpg')`,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#27548A]/20 to-[#183B4E]/20 rounded-3xl" />
@@ -157,7 +157,7 @@ export default function LearnWithUsPage() {
             return (
               <Card
                 key={program.id}
-                className="bg-white shadow-lg border border-[#F3F3E0] hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                className="bg-white shadow-lg border border-[#F3F3E0] hover:shadow-2xl transition-all duration-300"
               >
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">

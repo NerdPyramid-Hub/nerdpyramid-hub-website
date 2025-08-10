@@ -27,9 +27,13 @@ import {
   GraduationCap,
   Home,
   MessageCircle,
+  Code,
+  Send,
+  MessageSquare,
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 const cctvServices = [
   {
@@ -160,14 +164,49 @@ export default function CCTVServicesPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setSelectedService(null);
-    }, 3000);
+ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+
+  const form = e.target as HTMLFormElement;
+  const data = {
+    service: cctvServices.find((s) => s.id === selectedService)?.title || '',
+    fullName: (form.elements.namedItem("fullName") as HTMLInputElement)?.value,
+    phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value,
+    email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
+    property: (form.elements.namedItem("property") as HTMLSelectElement)?.value,
+    requirements: (form.elements.namedItem("requirements") as HTMLTextAreaElement)?.value,
   };
+
+  try {
+    const response = await fetch('https://formspree.io/f/xvgqpown', { // <-- replace yourFormId here
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Quote Sent!',
+        text: 'Thank you for your request. We will get back to you shortly.',
+      });
+      form.reset();
+      // Optionally close modal:
+      handleCloseModal();
+    } else {
+      throw new Error('Network response was not ok');
+    }
+  } catch (error) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong. Please try again later.',
+    });
+  }
+}
 
   return (
     <section className="min-h-screen py-16 px-4 bg-[#f3f2e6]">
@@ -176,9 +215,9 @@ export default function CCTVServicesPage() {
         <div className="text-center mb-16 mt-16 relative">
           {/* Background Image with Overlay */}
           <div
-            className="absolute inset-0 rounded-3xl opacity-10 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 rounded-3xl opacity-50 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/b3e651806bc8855e11bb8b495b8d784f06337564.jpg')`,
+              backgroundImage: `url('/cctv.jpg')`,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#27548A]/20 to-[#183B4E]/20 rounded-3xl" />
@@ -398,198 +437,275 @@ export default function CCTVServicesPage() {
             </div>
           </div>
         </div>
-
-        {/* Quote Form Modal */}
+{/*Get Quote Modal */}
         {selectedService && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-            onClick={handleModalClick}
-          >
-            <div className="max-w-2xl w-full bg-[#faf9f3] rounded-xl shadow-2xl p-8 max-h-[90vh] overflow-y-auto">
-              <div className="text-center mb-6">
-                <h2 className="text-3xl font-bold mb-2 text-[#183B4E]">
-                  Get Your Free Quote
-                </h2>
-                <p className="text-[#27548A]">
-                  Service selected:{" "}
-                  <span className="font-semibold text-[#DDA853]">
-                    {cctvServices.find((s) => s.id === selectedService)?.title}
-                  </span>
-                </p>
-              </div>
+  <div
+    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+    onClick={handleModalClick}
+  >
+    <div className="max-w-2xl w-full bg-[#faf9f3] rounded-xl shadow-2xl p-8 max-h-[90vh] overflow-y-auto">
+      <div className="text-center mb-6">
+        <h2 className="text-3xl font-bold mb-2 text-[#183B4E]">
+          Get Your Free Quote
+        </h2>
+        <p className="text-[#27548A]">
+          Service selected:{' '}
+          <span className="font-semibold text-[#DDA853]">
+            {cctvServices.find((s) => s.id === selectedService)?.title}
+          </span>
+        </p>
+      </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      className="block font-semibold mb-2 text-[#183B4E]"
-                      htmlFor="fullName"
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      id="fullName"
-                      type="text"
-                      required
-                      className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      className="block font-semibold mb-2 text-[#183B4E]"
-                      htmlFor="phone"
-                    >
-                      Phone Number
-                    </label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      required
-                      className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
-                      placeholder="+27 XX XXX XXXX"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    className="block font-semibold mb-2 text-[#183B4E]"
-                    htmlFor="email"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    className="block font-semibold mb-2 text-[#183B4E]"
-                    htmlFor="property"
-                  >
-                    Property Type
-                  </label>
-                  <select
-                    id="property"
-                    required
-                    className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
-                  >
-                    <option value="">Select property type</option>
-                    <option value="student-res">Student Residence Room</option>
-                    <option value="single-room">Single Room/Flat</option>
-                    <option value="shared-accommodation">
-                      Shared Accommodation
-                    </option>
-                    <option value="family-home">Family Home</option>
-                    <option value="apartment">Apartment/Complex</option>
-                    <option value="business">Business/Office</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    className="block font-semibold mb-2 text-[#183B4E]"
-                    htmlFor="requirements"
-                  >
-                    Security Requirements & Questions
-                  </label>
-                  <textarea
-                    id="requirements"
-                    rows={4}
-                    className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
-                    placeholder="Tell us about your security needs, budget concerns, areas to cover, specific theft concerns, etc."
-                  />
-                </div>
-
-                <div className="flex gap-4">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={handleCloseModal}
-                    className="flex-1 border-2 border-[#27548A] text-[#27548A] hover:bg-[#27548A] hover:text-white"
-                  >
-                    Cancel
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="flex-1 text-white font-bold hover:opacity-90 transition-all duration-300"
-                    style={{
-                      background: `linear-gradient(135deg, #27548A 0%, #183B4E 100%)`,
-                    }}
-                  >
-                    {formSubmitted ? (
-                      <span className="flex items-center gap-2">
-                        Quote Sent! <span className="animate-bounce">🎉</span>
-                      </span>
-                    ) : (
-                      <>
-                        Request Quote <Camera className="h-4 w-4 ml-2" />
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
-
-        {/* Contact Information */}
-        <div
-          className="text-white rounded-3xl p-8 shadow-2xl text-center"
-          style={{
-            background: `linear-gradient(135deg, #27548A 0%, #183B4E 100%)`,
-          }}
-        >
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Secure Your Space?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Whether you're a student, renter, or homeowner - we have affordable
-            security solutions for everyone
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div className="flex items-center justify-center gap-2">
-              <Phone className="h-5 w-5" />
-              <span className="font-semibold">+27 79 015 3035</span>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <Mail className="h-5 w-5" />
-              <span className="font-semibold">info@nerdpyramidhub.com</span>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="font-bold text-white hover:opacity-90"
-              style={{ backgroundColor: "#25D366" }}
-              onClick={() => window.open("https://wa.me/27790153035", "_blank")}
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label
+              className="block font-semibold mb-2 text-[#183B4E]"
+              htmlFor="fullName"
             >
-              <MessageCircle className="h-5 w-5 mr-2" />
-              WhatsApp Us
-            </Button>
-            <Button
-              size="lg"
-              className="font-bold text-white hover:opacity-90"
-              style={{
-                backgroundColor: "#DDA853",
-                border: "2px solid #DDA853",
-              }}
-              onClick={() => window.open("tel:+27790153035", "_self")}
+              Full Name
+            </label>
+            <input
+              id="fullName"
+              name="fullName"
+              type="text"
+              required
+              className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
+              placeholder="Your full name"
+            />
+          </div>
+          <div>
+            <label
+              className="block font-semibold mb-2 text-[#183B4E]"
+              htmlFor="phone"
             >
-              <Phone className="h-5 w-5 mr-2" />
-              Call Now: +27 79 015 3035
-            </Button>
+              Phone Number
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
+              placeholder="+27 XX XXX XXXX"
+            />
           </div>
         </div>
+
+        <div>
+          <label
+            className="block font-semibold mb-2 text-[#183B4E]"
+            htmlFor="email"
+          >
+            Email Address
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
+            placeholder="your@email.com"
+          />
+        </div>
+
+        <div>
+          <label
+            className="block font-semibold mb-2 text-[#183B4E]"
+            htmlFor="property"
+          >
+            Property Type
+          </label>
+          <select
+            id="property"
+            name="property"
+            required
+            className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
+          >
+            <option value="">Select property type</option>
+            <option value="student-res">Student Residence Room</option>
+            <option value="single-room">Single Room/Flat</option>
+            <option value="shared-accommodation">
+              Shared Accommodation
+            </option>
+            <option value="family-home">Family Home</option>
+            <option value="apartment">Apartment/Complex</option>
+            <option value="business">Business/Office</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label
+            className="block font-semibold mb-2 text-[#183B4E]"
+            htmlFor="requirements"
+          >
+            Security Requirements & Questions
+          </label>
+          <textarea
+            id="requirements"
+            name="requirements"
+            rows={4}
+            className="w-full px-4 py-3 border-2 border-[#27548A] outline-none transition shadow-sm rounded-lg focus:border-[#DDA853] focus:ring-2 focus:ring-blue-200"
+            placeholder="Tell us about your security needs, budget concerns, areas to cover, specific theft concerns, etc."
+          />
+        </div>
+
+        <div className="flex gap-4">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={handleCloseModal}
+            className="flex-1 border-2 border-[#27548A] text-[#27548A] hover:bg-[#27548A] hover:text-white"
+          >
+            Cancel
+          </Button>
+          <Button
+            type="submit"
+            className="flex-1 text-white font-bold hover:opacity-90 transition-all duration-300"
+            style={{
+              background: `linear-gradient(135deg, #27548A 0%, #183B4E 100%)`,
+            }}
+          >
+            {formSubmitted ? (
+              <span className="flex items-center gap-2">
+                Quote Sent! <span className="animate-bounce">🎉</span>
+              </span>
+            ) : (
+              <>
+                Request Quote <Camera className="h-4 w-4 ml-2" />
+              </>
+            )}
+          </Button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
+        {/* Contact Information */}
+<div
+  className="text-white rounded-3xl p-8 shadow-2xl text-center mb-16 bg-[#183B4E]"
+>
+  {/* Header */}
+  <h2 className="text-3xl font-bold mb-6">
+    Ready to Secure Your Space?
+  </h2>
+
+  {/* Description */}
+  <p className="text-xl mb-8 opacity-90">
+    Whether you're a student, renter, or homeowner - we have affordable security solutions for everyone
+  </p>
+
+  {/* Contact Buttons */}
+  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    <Button
+      size="lg"
+      className="font-bold text-white hover:opacity-90"
+      style={{ backgroundColor: "#25D366" }}
+      onClick={() => window.open("https://wa.me/27790153035", "_blank")}
+    >
+      <MessageCircle className="h-5 w-5 mr-2" />
+      WhatsApp Us
+    </Button>
+    <Button
+      size="lg"
+      className="font-bold text-white hover:opacity-90"
+      style={{
+        backgroundColor: "#DDA853",
+        border: "2px solid #DDA853",
+      }}
+      onClick={() => window.open("tel:+27790153035", "_self")}
+    >
+      <Phone className="h-5 w-5 mr-2" />
+      Call Now: +27 79 015 3035
+    </Button>
+    <Button
+      size="lg"
+      className="font-bold text-white hover:opacity-90"
+      style={{ backgroundColor: "#4CAF50" }}
+      onClick={() => window.open("mailto:info@nerdpyramidhub.com", "_blank")}
+    >
+      <Mail className="h-5 w-5 mr-2" />
+      Email Us
+    </Button>
+  </div>
+</div>
+
+{/* Contact Form Section */}
+<div className="mb-16 bg-[#faf9f3] rounded-xl shadow-md p-8">
+  <div className="text-center mb-8">
+    <div className="flex items-center justify-center gap-3 mb-4">
+      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#E6ECF3]">
+        <MessageSquare className="h-8 w-8 text-[#DDA853]" />
+      </div>
+      <h2 className="text-3xl font-bold text-[#183B4E]">
+        Get In Touch
+      </h2>
+    </div>
+    <p className="text-lg text-[#27548A] max-w-2xl mx-auto">
+      Have questions or ready to start your security project? Fill out the form below
+      and we'll get back to you within 24 hours.
+    </p>
+  </div>
+
+  <form 
+    className="max-w-2xl mx-auto space-y-6"
+    action="https://formspree.io/f/xvgqpown" 
+    method="POST"
+  >
+    <input type="hidden" name="_subject" value="New Project Inquiry" />
+    <input type="hidden" name="form_name" value="ContactUsPage" />
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Name Field */}
+      <div>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          className="w-full px-5 py-3 text-lg border border-gray-200 focus:border-[#DDA853] focus:ring-2 focus:ring-[#DDA853]/30 rounded-lg bg-white placeholder-[#183B4E]/70"
+          placeholder="Your Name"
+        />
+      </div>
+
+      {/* Email Field */}
+      <div>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          className="w-full px-5 py-3 text-lg border border-gray-200 focus:border-[#DDA853] focus:ring-2 focus:ring-[#DDA853]/30 rounded-lg bg-white placeholder-[#183B4E]/70"
+          placeholder="Email Address"
+        />
+      </div>
+    </div>
+
+    {/* Message Field - Now with just placeholder text */}
+    <div>
+      <textarea
+        id="message"
+        name="message"
+        rows={5}
+        required
+        className="w-full px-5 py-3 text-lg border border-gray-200 focus:border-[#DDA853] focus:ring-2 focus:ring-[#DDA853]/30 rounded-lg bg-white min-h-[150px] placeholder-[#183B4E]/70"
+        placeholder="Tell us about your security needs..."
+      ></textarea>
+    </div>
+
+    {/* Submit Button */}
+    <div className="pt-2">
+      <Button
+        type="submit"
+        className="w-full font-semibold text-white bg-[#27548A] hover:bg-[#183B4E] py-4 text-lg"
+      >
+        <Send className="h-5 w-5 mr-2" />
+        Send Message
+      </Button>
+    </div>
+  </form>
+</div>
       </div>
     </section>
   );

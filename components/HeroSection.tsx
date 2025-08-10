@@ -15,17 +15,17 @@ export default function HeroSection() {
             <div className="space-y-4">
               <Badge variant="secondary" className="w-fit bg-[#DDA853] text-[#183B4E]">
                 <Lightbulb className="w-3 h-3 mr-1" />
-                From Classmates to Tech Leaders
+                Let’s turn your ideas into real, working software that makes a difference
               </Badge>
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-[#183B4E]">
                 Building{" "}
                 <span className="text-[#27548A]">
                   Digital Futures
                 </span>{" "}
-                Through Code & Education
+                Through Code
               </h1>
               <p className="max-w-[600px] text-[#183B4E] md:text-xl">
-                We combine cutting-edge technology with passionate education to create meaningful digital solutions while mentoring the next generation of developers.
+                We combine cutting-edge technology with innovative thinking to craft meaningful digital solutions that are resilient and built to last forever.
               </p>
             </div>
             <div className="flex flex-col gap-6 min-[400px]:flex-row">
