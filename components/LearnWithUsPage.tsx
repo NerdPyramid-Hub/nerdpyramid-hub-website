@@ -17,7 +17,7 @@ import {
   Star,
   ArrowRight,
   Globe,
-  X
+  X,
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
@@ -109,24 +109,44 @@ export default function LearnWithUsPage() {
   };
 
   return (
-    <section className="min-h-screen bg-[#F3F3E0] py-16 px-4">
+    <section className="min-h-screen bg-[#f3f2e6] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="bg-[#27548A] rounded-full p-3 shadow-lg">
-              <BookOpen className="h-8 w-8 text-[#F3F3E0]" />
+        <div className="text-center mb-16 mt-16 relative">
+          {/* Background Image with Overlay */}
+          <div
+            className="absolute inset-0 rounded-3xl opacity-50 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/education coding.jpg')`,
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#27548A]/20 to-[#183B4E]/20 rounded-3xl" />
+
+          {/* Content */}
+          <div className="relative z-10 py-16">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="bg-[#27548A] rounded-full p-3 shadow-lg">
+                <BookOpen className="h-8 w-8 text-[#F3F3E0]" />
+              </div>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-[#183B4E]">
+                Learn With Us
+              </h1>
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-[#183B4E]">
-              Learn With Us
-            </h1>
-          </div>
-          <div className="border-l-4 border-[#DDA853] bg-white px-8 py-6 shadow-md rounded-lg max-w-4xl mx-auto">
-            <p className="text-lg md:text-xl text-[#27548A] font-semibold">
-              Transform your career with our <span className="font-bold text-[#183B4E]">industry-focused</span> learning programs.<br />
-              From coding fundamentals to advanced AI, we'll guide you every step of the way.
-              <span className="italic text-[#DDA853] mt-2 block">Choose your path to success!</span>
-            </p>
+            <div className="border-l-4 border-[#DDA853] px-8 py-6 shadow-md rounded-lg max-w-4xl mx-auto bg-white/95 backdrop-blur-sm">
+              <p className="text-lg md:text-xl text-[#27548A] font-semibold">
+                Transform your career with our{" "}
+                <span className="font-bold text-[#183B4E]">
+                  industry-focused
+                </span>{" "}
+                learning programs.
+                <br />
+                From coding fundamentals to advanced AI, we'll guide you every
+                step of the way.
+                <span className="italic text-[#DDA853] mt-2 block">
+                  Choose your path to success!
+                </span>
+              </p>
+            </div>
           </div>
         </div>
 
@@ -137,7 +157,7 @@ export default function LearnWithUsPage() {
             return (
               <Card
                 key={program.id}
-                className="bg-white shadow-lg border border-[#F3F3E0] hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                className="bg-white shadow-lg border border-[#F3F3E0] hover:shadow-2xl transition-all duration-300"
               >
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">
@@ -158,16 +178,25 @@ export default function LearnWithUsPage() {
                       <Clock className="h-4 w-4" />
                       {program.duration}
                     </div>
-                    <Badge variant="outline" className="text-[#27548A] border-[#27548A]">
+                    <Badge
+                      variant="outline"
+                      className="text-[#27548A] border-[#27548A]"
+                    >
                       {program.level}
                     </Badge>
                   </div>
 
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-[#183B4E]">Technologies:</h4>
+                    <h4 className="font-semibold text-[#183B4E]">
+                      Technologies:
+                    </h4>
                     <div className="flex flex-wrap gap-1">
                       {program.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs bg-[#DDA853]/10 text-[#DDA853]">
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="text-xs bg-[#DDA853]/10 text-[#DDA853]"
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -175,7 +204,9 @@ export default function LearnWithUsPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-[#183B4E]">What you'll get:</h4>
+                    <h4 className="font-semibold text-[#183B4E]">
+                      What you'll get:
+                    </h4>
                     <ul className="space-y-1 text-sm text-[#27548A]">
                       {program.highlights.map((highlight, index) => (
                         <li key={index} className="flex items-center gap-2">
@@ -212,32 +243,36 @@ export default function LearnWithUsPage() {
 
         {/* Enrollment Modal */}
         {selectedProgram && (
-  <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center px-4">
-    <div className="max-w-xl w-full bg-[#F3F3E0] rounded-2xl p-8 shadow-2xl border-2 border-[#27548A]">
-      <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-[#183B4E]">
-          Enrollments are Closed
-        </h2>
-        <p className="text-[#27548A] text-lg font-medium">
-          Thank you for your interest in our learning programs!
-        </p>
-        <p className="text-[#183B4E]/80 text-base">
-          We’re currently preparing exciting new sessions. Enrollments will reopen on{" "}
-          <span className="font-semibold text-[#DDA853]">01 August 2025</span>.
-        </p>
-        <p className="italic text-[#27548A] mt-2">
-          Stay tuned and keep coding — the future is bright! 🌟
-        </p>
-        <button
-          onClick={() => setSelectedProgram(null)}
-          className="mt-6 px-6 py-2 rounded-lg bg-[#27548A] text-white font-semibold hover:bg-[#183B4E] transition-all duration-300"
-        >
-          Back to Programs
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+          <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center px-4">
+            <div className="max-w-xl w-full bg-[#F3F3E0] rounded-2xl p-8 shadow-2xl border-2 border-[#27548A]">
+              <div className="text-center space-y-4">
+                <h2 className="text-3xl font-bold text-[#183B4E]">
+                  Enrollments are Closed
+                </h2>
+                <p className="text-[#27548A] text-lg font-medium">
+                  Thank you for your interest in our learning programs!
+                </p>
+                <p className="text-[#183B4E]/80 text-base">
+                  We’re currently preparing exciting new sessions. Enrollments
+                  will reopen on{" "}
+                  <span className="font-semibold text-[#DDA853]">
+                    15 August 2025
+                  </span>
+                  .
+                </p>
+                <p className="italic text-[#27548A] mt-2">
+                  Stay tuned and keep coding — the future is bright! 🌟
+                </p>
+                <button
+                  onClick={() => setSelectedProgram(null)}
+                  className="mt-6 px-6 py-2 rounded-lg bg-[#27548A] text-white font-semibold hover:bg-[#183B4E] transition-all duration-300"
+                >
+                  Back to Programs
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* {selectedProgram && (
           <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4">
@@ -307,10 +342,15 @@ export default function LearnWithUsPage() {
           <div className="bg-[#183B4E] text-[#F3F3E0] rounded-3xl p-10 shadow-2xl max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
             <p className="text-xl mb-6 text-[#F3F3E0]/90">
-              Our learning advisors are here to help you choose the perfect program
+              Our learning advisors are here to help you choose the perfect
+              program
             </p>
             <Link href="/contact-us">
-              <Button size="lg" variant="secondary" className="bg-[#DDA853] text-[#183B4E] hover:bg-[#c7983f] font-bold">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-[#DDA853] text-[#183B4E] hover:bg-[#c7983f] font-bold"
+              >
                 Get Free Consultation
               </Button>
             </Link>

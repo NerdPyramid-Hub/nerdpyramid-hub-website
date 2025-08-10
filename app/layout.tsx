@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: 'NerdPyramid Hub',
   description: 'Created by NerdPyramid Hub',
   generator: 'NerdPyramid Hub',
+  icons: {
+    icon: [
+      { url: '/nerdpyramid_logo_bg_removed.png.png', sizes: '40x40', type: 'image/png' }, // Non-scalable PNG iconx32' }, // Scalable SVG 
+    ],
+  },
 }
 
 export default function RootLayout({
