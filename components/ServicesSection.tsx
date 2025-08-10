@@ -1,7 +1,7 @@
 // components/ServicesSection.tsx
 import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { BookOpen, Code, Users } from "lucide-react"
+import { BookOpen, Camera, Code, Users } from "lucide-react"
 
 export default function ServicesSection() {
   return (
@@ -49,16 +49,17 @@ export default function ServicesSection() {
           </Card>
 
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#F3F3E0] mb-4">
-                <Users className="h-6 w-6 text-[#183B4E]" />
-              </div>
-              <CardTitle className="text-[#183B4E]">Mentorship</CardTitle>
-              <CardDescription className="text-[#183B4E]">
-                One-on-one guidance and support to help aspiring developers build real, practical digital skills.
-              </CardDescription>
-            </CardHeader>
-          </Card>
+  <CardHeader>
+    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#F3F3E0] mb-4">
+      <Camera className="h-6 w-6 text-[#183B4E]" />
+    </div>
+    <CardTitle className="text-[#183B4E]">CCTV Installations</CardTitle>
+    <CardDescription className="text-[#183B4E]">
+      Professional installation services to secure your property with high-quality surveillance cameras, ensuring safety and peace of mind.
+    </CardDescription>
+  </CardHeader>
+</Card>
+
         </div>
       </div>
     </section>
