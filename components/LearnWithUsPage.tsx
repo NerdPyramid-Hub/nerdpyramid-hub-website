@@ -254,9 +254,9 @@ export default function LearnWithUsPage() {
                 </p>
                 <p className="text-[#183B4E]/80 text-base">
                   We’re currently preparing exciting new sessions. Enrollments
-                  will reopen on{" "}
+                  will reopen {" "}
                   <span className="font-semibold text-[#DDA853]">
-                    15 August 2025
+                    Soon!
                   </span>
                   .
                 </p>
