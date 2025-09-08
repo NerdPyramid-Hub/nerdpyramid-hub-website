@@ -12,35 +12,21 @@ import { Mail, Linkedin, Users } from "lucide-react";
 const teamMembers = [
   {
     name: "Luvolwethu Tokwe",
-    position: "Business Development Manager & Founder",
+    position: "Director",
     image: "/luvolwethu.jpeg",
     email: "luvolwethu.tokwe@nerdpyramidhub.com",
     linkedin: "linkedin.com/in/luvolwethu-tokwe-318584180/",
   },
   {
     name: "Clinton Mgoduswa",
-    position: "Project Manager",
+    position: "Director",
     image: "/clintonmgoduswa.jpeg",
     email: "clinton.mgoduswa@nerdpyramidhub.com",
     linkedin: "linkedin.com/in/clinton-mgoduswa-bb461322b/",
   },
   {
-    name: "Abulele Maqungo",
-    position: "Business Analyst",
-    image: "/abulele.jpeg",
-    email: "abulele.maqungo@nerdpyramidhub.com",
-    linkedin: "linkedin.com/in/abulele-maqungo-53938b241",
-  },
-  {
-    name: "Lusanda Gutswana",
-    position: "Lead Developer",
-    image: "/lusandaImg.jpeg",
-    email: "lusanda.gutswana@nerdpyramidhub.com",
-    linkedin: "linkedin.com/in/lusanda-gutswana-926115220/",
-  },
-  {
     name: "Sakhe Morosi",
-    position: "Software Developer",
+    position: "Director",
     image: "/sakhe.png",
     email: "sakhe.morosi@nerdpyramidhub.com",
     linkedin: "linkedin.com/in/sakhe-morosi-790854214/",
