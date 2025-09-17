@@ -1,9 +1,7 @@
-// components/Header.tsx
 "use client";
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Code, Menu, X } from "lucide-react";
+import {Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -59,7 +57,12 @@ export default function Navbar() {
           aria-label="Home"
         >
           <div className="flex  items-center justify-center">
-            <Image src="/nerdpyramid_logo_bg_removed.png.png" alt="Logo" width={60} height={60} />
+            <Image
+              src="/android-chrome-192x192.png"
+              alt="Logo"
+              width={40}
+              height={40}
+            />
           </div>
           <span
             className="text-lg md:text-2xl font-black tracking-tight text-[#5997e2] drop-shadow-sm"
