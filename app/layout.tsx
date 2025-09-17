@@ -9,24 +9,27 @@ export const metadata: Metadata = {
   generator: 'NerdPyramid Hub',
   icons: {
     icon: [
-      { url: '/nerdpyramid_logo_bg_removed.png.png', sizes: '40x40', type: 'image/png' }, // Non-scalable PNG iconx32' }, // Scalable SVG 
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' }
     ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico'
   },
+  manifest: '/site.webmanifest',
 }
-
+ 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" 
-      suppressHydrationWarning={true}
-     data-qb-installed="true">
+    <html lang="en" suppressHydrationWarning={true}>
       <body suppressHydrationWarning={true}>
         {children}
-        <Analytics/>
-        <Footer/>
+        <Analytics />
+        <Footer />
       </body>
     </html>
   )
