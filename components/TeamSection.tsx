@@ -47,7 +47,7 @@ export default function TeamSection() {
             The Minds Behind NerdPyramid Hub
           </h2>
           <p className="max-w-2xl text-[#27548A] text-lg md:text-xl leading-relaxed">
-            Five passionate professionals who started as classmates and now
+            Three passionate professionals who started as classmates and now
             lead the future of digital innovation and education.
           </p>
         </div>
