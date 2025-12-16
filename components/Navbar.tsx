@@ -16,6 +16,7 @@ export default function Navbar() {
     { href: "/software-solutions", label: "Software " },
     { href: "/cctv-installation", label: "CCTV " },
     { href: "/learn-with-us", label: "Learn " },
+    { href: "/careers", label: "Careers" },
   ];
 
   useEffect(() => {
