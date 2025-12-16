@@ -13,9 +13,9 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/software-solutions", label: "Software Solutions" },
-    { href: "/cctv-installation", label: "CCTV Installation" },
-    { href: "/learn-with-us", label: "Learn with Us" },
+    { href: "/software-solutions", label: "Software " },
+    { href: "/cctv-installation", label: "CCTV " },
+    { href: "/learn-with-us", label: "Learn " },
   ];
 
   useEffect(() => {

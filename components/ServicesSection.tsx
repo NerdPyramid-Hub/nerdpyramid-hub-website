@@ -48,7 +48,7 @@ export default function ServicesSection() {
               </CardHeader>
             </Card>
           </Link>
-          <Link href="/learn-with-us">
+          <Link href="/learn-With-Us">
             <Card className="flex flex-col h-full items-center text-center border-0 shadow-lg hover:shadow-xl transition-shadow p-2">
               <CardHeader className="flex flex-col items-center">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#F3F3E0] mb-4">
@@ -64,7 +64,7 @@ export default function ServicesSection() {
               </CardHeader>
             </Card>
           </Link>
-          <Link href="/cctv-installation">
+          <Link href="/cctv-Installation">
             <Card className="flex flex-col h-full items-center text-center border-0 shadow-lg hover:shadow-xl transition-shadow p-2">
               <CardHeader className="flex flex-col items-center">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#F3F3E0] mb-4">

@@ -99,7 +99,7 @@ export default function HeroSection() {
       requestAnimationFrame(animate);
     };
 
-    animate();
+    //animate();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
