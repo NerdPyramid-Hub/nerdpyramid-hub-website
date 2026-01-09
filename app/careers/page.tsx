@@ -1,20 +1,16 @@
-"use client";
+import Navbar from "@/components/Navbar"
 
-import { useState } from 'react';
+import DocumentsForm from "@/components/ui/documentsform";
 
-export default function CounterPage() {
-  const [count, setCount] = useState(0);
-
+export default function CareersPage() {
   return (
-    <div className="p-8">
-      <h1>Interactive Page</h1>
-      <p>Current count: {count}</p>
-      <button 
-        onClick={() => setCount(count + 1)}
-        className="px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        Increment
-      </button>
+    <div className="min-h-screen bg-[#F3F3E0]">
+      <Navbar />
+        <h1></h1>
+        <DocumentsForm />
     </div>
   );
 }
+
+
+

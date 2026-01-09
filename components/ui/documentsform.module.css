@@ -1,0 +1,58 @@
+.form {
+  max-width: 520px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.dropbox {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #475569;
+}
+
+.dropbox:hover {
+  border-color: #4f46e5;
+  background: #f8fafc;
+}
+
+.dragging {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+.fileName {
+  font-weight: 500;
+  color: #111827;
+}
+
+.button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: #4338ca;
+}
