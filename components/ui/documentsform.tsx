@@ -52,7 +52,6 @@ export default function DocumentsForm() {
         onClick={() => document.getElementById("fileInput")?.click()}
       >
         <input
-          id="fileInput"
           type="file"
           hidden
           accept=".pdf,.doc,.docx"
