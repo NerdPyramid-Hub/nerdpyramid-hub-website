@@ -10,13 +10,12 @@ export default function CareersPage() {
   const openPositions = [
     { title: "Frontend Developer", location: "Remote", type: "Full-time" },
     { title: "Backend Developer", location: "On-site", type: "Full-time" },
-    { title: "UI/UX Designer", location: "Remote", type: "Contract" },
-    { title: "QA Engineer", location: "Remote", type: "Full-time" },
+    
     { title: "Intern", location: "Remote", type: "Internship" },
   ];
 
-  return (
-    <div className="min-h-screen bg-gray-100 flex items-start justify-center py-10 px-4">
+  return (        
+    <div className="min-h-screen bg-[#f3f2e6] flex items-center justify-center py-10 px-4">
       {/* Container with two columns */}
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
         
