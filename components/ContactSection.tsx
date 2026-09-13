@@ -62,10 +62,10 @@ export default function ContactSection() {
               <Mail className="h-4 w-4 text-[#DDA853]" />
             </div>
             <Link
-              href="mailto:info@nerdpyramidhub.com"
+              href="mailto:morosisakhe@gmail.com"
               className="text-[#F3F3E0]/70 hover:text-[#DDA853] transition-colors text-sm font-medium"
             >
-              info@nerdpyramidhub.com
+              morosisakhe@gmail.com
             </Link>
           </div>
         </div>

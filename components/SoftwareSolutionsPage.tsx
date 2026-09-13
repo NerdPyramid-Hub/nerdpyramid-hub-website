@@ -496,7 +496,7 @@ export default function SoftwareSolutionsPage() {
       size="lg"
       className="font-bold text-white hover:opacity-90"
       style={{ backgroundColor: "#4CAF50" }}
-      onClick={() => window.open("mailto:info@nerdpyramidhub.com", "_blank")}
+      onClick={() => window.open("mailto:morosisakhe@gmail.com", "_blank")}
     >
       <Mail className="h-5 w-5 mr-2" />
       Email Us

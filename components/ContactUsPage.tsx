@@ -43,7 +43,7 @@ export default function ContactUsPage() {
                 Call Now: +27 79 015 3035
               </Button>
             </a>
-            <a href="mailto:info@nerdpyramidhub.com">
+            <a href="mailto:morosisakhe@gmail.com">
               <Button
                 size="lg"
                 className="font-bold text-white hover:opacity-90 w-full"

@@ -280,7 +280,7 @@ export default function AboutPage() {
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-[#27548A] mr-3" />
                   <span className="text-[#183B4E]">
-                    info@nerdpyramidhub.com
+                    morosisakhe@gmail.com
                   </span>
                 </div>
                 <div className="flex items-center">

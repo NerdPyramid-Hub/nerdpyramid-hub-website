@@ -108,8 +108,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 text-sm text-[#F3F3E0]/55">
                 <Mail className="h-4 w-4 text-[#DDA853] flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@nerdpyramidhub.com" className="hover:text-[#DDA853] transition-colors break-all">
-                  info@nerdpyramidhub.com
+                <a href="mailto:morosisakhe@gmail.com" className="hover:text-[#DDA853] transition-colors break-all">
+                  morosisakhe@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-[#F3F3E0]/55">
